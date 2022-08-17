@@ -29,7 +29,7 @@ def load_data(nrows= 1000):
     return data
 
 #slider1
-nrows_ = st.sidebar.slider("How many accidents you want to analyze?", 0, 1000000, 5000)
+nrows_ = st.sidebar.slider("How many accidents you want to analyze?", 0, 1000000, 150000)
 data = load_data(nrows_)
 original_data = data
 
@@ -45,7 +45,7 @@ hour = st.sidebar.slider('Hour to look at',0 , 23)
 data = data[data['date/time'].dt.hour == hour]
 
 st.markdown('Vehicle collisions between %i:00 and %i:00' % (hour, (hour +1)))
-midpoint = (np.average(data['latitude']), np.average(data['longitude']))
+#midpoint = (np.average(data['latitude']), np.average(data['longitude']))
 
 #3d map
 def show_on_map(lattitude, longitude, data, radius):
@@ -54,7 +54,7 @@ def show_on_map(lattitude, longitude, data, radius):
     initial_view_state={
         'latitude': lattitude,
         'longitude': longitude,
-        'zoom': 11,
+        'zoom': 10,
         'pitch': 50,   
     },
     layers=[
@@ -71,7 +71,10 @@ def show_on_map(lattitude, longitude, data, radius):
     ],
 ))
 
-show_on_map(midpoint[0], midpoint[1], 
+NYC_latitude = 40.730610
+NYC_longitude = -73.935242
+
+show_on_map(NYC_latitude, NYC_longitude, 
             data[['date/time', 'latitude', 'longitude']], 
             100)
 
