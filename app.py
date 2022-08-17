@@ -1,5 +1,6 @@
 from json import load
 from re import U
+from tkinter import Image
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -12,7 +13,7 @@ DATA_URL = (
 
 st.title("Motor Vehicle Collisions in New York City")
 st.markdown("#### This application is a Streamlit dashboard that can be used"
-            " to analyze motor vehicle collisions in NYC.")
+            " to analyze motor vehicle collisions in NYC.🗽💥🚙")
 
 #function loading our data from file
 #parameter - nrows
