@@ -1,6 +1,5 @@
 from json import load
 from re import U
-from tkinter import Image
 import streamlit as st
 import pandas as pd
 import numpy as np
