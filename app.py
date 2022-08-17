@@ -8,7 +8,8 @@ import plotly.express as px
 
 
 DATA_URL = (
-    'data/Motor_Vehicle_Collisions_-_Crashes.csv'
+    #'data/Motor_Vehicle_Collisions_-_Crashes.csv'
+    'data/Motor_Vehicle_Collisions_-_Crashes_min.csv'
 )
 
 st.title("Motor Vehicle Collisions in New York City")
@@ -20,7 +21,7 @@ st.markdown("#### This application is a Streamlit dashboard that can be used"
 #@st.cache - avoid computing changes every time app is rerun
 
 @st.cache(persist=True)
-def load_data(nrows= 1000):
+def load_data(nrows= 10000):
     data = pd.read_csv(DATA_URL, nrows=nrows, parse_dates=[['CRASH TIME', 'CRASH DATE']])
     data.dropna(subset=['LONGITUDE', 'LATITUDE'], inplace= True)
     lowercase = lambda x: str(x).lower()
@@ -29,7 +30,7 @@ def load_data(nrows= 1000):
     return data
 
 #slider1
-nrows_ = st.sidebar.slider("How many accidents you want to analyze?", 0, 1000000, 150000)
+nrows_ = st.sidebar.slider("How many accidents you want to analyze?", 0, 90000, 90000)
 data = load_data(nrows_)
 original_data = data
 
