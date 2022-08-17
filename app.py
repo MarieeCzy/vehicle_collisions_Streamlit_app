@@ -135,7 +135,7 @@ elif select == 'Cyclists':
                              cyclists_killed,
                              150))
         
-elif select == 'Motorists':
+else:
     if select_type == "Injured":
         motorists_injured = original_data.query('injured_motorists >=1')[["on_street_name", "injured_motorists", "longitude", "latitude"]].sort_values(by=["injured_motorists"], ascending=False).dropna(how="any")[:5]
         st.write(motorists_injured)
