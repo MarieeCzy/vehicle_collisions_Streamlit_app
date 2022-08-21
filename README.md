@@ -9,7 +9,7 @@
 
 [![Python][python]][python_url]
 
-Data Science application created for the learning purpouse which allows you to analyze car accidents in New York City.
+Data Science application created for the learning purposes which allows you to analyze car accidents in New York City.
 Project from the learning path "COURSERA project network". 
 
 ### Expanded with:
