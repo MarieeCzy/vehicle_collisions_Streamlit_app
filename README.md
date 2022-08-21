@@ -19,6 +19,7 @@ Project from the learning path "COURSERA project network".
 
 ### I am planning a further expansion with:
 - [ ] getting input data from API
+- [ ] adding accident labels on maps
 
 ### 🔌 Built With:
 - `python`
